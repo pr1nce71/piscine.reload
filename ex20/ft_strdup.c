@@ -1,67 +1,66 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elodlim <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/07 14:55:35 by elodlim           #+#    #+#             */
+/*   Updated: 2024/11/07 14:55:38 by elodlim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-
-char *ft_strdup(char *src)
+int	ft_strlen(char *str)
 {
-    int i;
-    i = 0;
-    int len;
-    len = 0;
-    char *dup;
+	int	i;
 
-    while (src[len] != '\0')
-    {
-        len++;
-    }
-    dup = (char *)malloc(sizeof(char) * (len + 1));
-    if (!dup)
-    {
-        return(NULL);
-    }
-    while (i < len)
-    {
-        dup[i] = src[i];
-        i++;
-    }
-    dup[i] = '\0';
-    return(dup);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
 
-// #include <string.h>
-// #include <stdio.h>
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
 
-// void ft_putchar(char c)
-// {
-// 	write(1, &c, 1);
-// }
+char	*ft_strdup(char *src)
+{
+	int		length;
+	char	*dest;
 
-// void ft_putstr(char *str)
-// {
-//     int i;
-//     i = 0;
-//     while(str[i] != '\0')
-//     {
-//         ft_putchar(str[i]);
-//         i++;
-//     }
-// }
+	length = ft_strlen(src);
+	dest = malloc((length + 1) * sizeof(char));
+	ft_strcpy(dest, src);
+	return (dest);
+}
 
-// int main(void)
-// {
-//     char *src = "Hello test";
-//     char *dup = ft_strdup(src);
-//     if (dup == NULL)
-//     {
-//         ft_putstr("error!\n");
-//         return (1);
-//     }
-//     ft_putstr("og: ");
-//     ft_putstr(src);
-//     ft_putchar('\n');
-//     ft_putstr("copie: ");
-//     ft_putstr(dup);
-//     ft_putchar('\n');
-//     return (0);
-// }
+/*#include <stdio.h>
+#include <string.h>
+int	main(void)
+{
+	char *original = "Test";
+	char *duplicate = strdup(original);
+	char *dup = ft_strdup(original);
+
+	printf("Original: %s\n", original);
+	printf("Duplicate: %s\n", duplicate);
+	printf("Ft_strdup: %s\n", dup);
+
+	free(duplicate);
+	free(dup);
+}*/

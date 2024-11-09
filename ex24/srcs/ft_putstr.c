@@ -1,47 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elodlim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:31:35 by elodlim           #+#    #+#             */
-/*   Updated: 2024/11/05 12:31:37 by elodlim          ###   ########.fr       */
+/*   Created: 2024/11/07 15:10:37 by elodlim           #+#    #+#             */
+/*   Updated: 2024/11/07 15:10:38 by elodlim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>*/
+#include <unistd.h>
 
-void	ft_swap(int *a, int *b)
+void	ft_putstr(char *str)
 {
-	int	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
 }
 
-/*void	ft_putnbr(int n)
+/*int	main()
 {
-	char	c;
-
-	if (n >= 10)
-		ft_putnbr(n);
-	c = (n % 10) + '0';
-	write(1, &c, 1);
-}
-
-int	main(void)
-{
-	int	x = 5;
-	int	y = 4;
-
-	ft_swap(&x, &y);
-	write(1, "x:", 2);
-	ft_putnbr(x);
-	write(1, " ", 1);
-	write(1, "y:", 2);
-	ft_putnbr(y);
-	write(1, "\n", 1);
+	char	str[] = "Test";
+	ft_putstr(str);
 	return (0);
 }*/

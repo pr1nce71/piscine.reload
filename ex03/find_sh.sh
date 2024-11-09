@@ -1,2 +1,2 @@
 #!/bin/sh
-find . -type f -name "*.sh" | rev | cut -d '.' -f 2 | cut -d '/' -f 1 | rev
+find . -name '*.sh' | xargs basename -a -s .sh

@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elodlim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 16:04:15 by elodlim           #+#    #+#             */
-/*   Updated: 2024/11/07 16:04:17 by elodlim          ###   ########.fr       */
+/*   Created: 2024/11/05 13:55:52 by elodlim           #+#    #+#             */
+/*   Updated: 2024/11/05 13:55:55 by elodlim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int	ft_recursive_factorial(int nb)
 {
-	long	i;
-
-	i = 0;
-	while (i * i <= nb)
-	{
-		if (i * i == nb)
-			return (i);
-		i++;
-	}
-	return (0);
+	if (!nb)
+		return (1);
+	if (nb < 0)
+		return (0);
+	return (nb * ft_recursive_factorial(nb - 1));
 }
 
 /*#include <stdio.h>
@@ -29,8 +24,25 @@ int	ft_sqrt(int nb)
 
 int	main(int argc, char *argv[])
 {
+	char	*str = argv[1];
+	int	i;
+	int	n;
+
+	i = 1;
 	if (argc != 2)
-		return (1);
-	printf("%i\n", ft_sqrt(atoi(argv[1])));
-	return (0);
+	{
+		printf("Usage: %s <number_to_convert>\n", argv[0]);
+		return 1;
+	}
+	while (i < argc)
+	{
+		n = atoi(argv[i]);
+		if (n > 12)
+		{
+			printf("warning: factorial of %d may cause overflow in 32-bits int.\n", n);
+		}
+		printf("The Factorial of %d is %d", n, ft_recursive_factorial(n));
+		i++;
+	}
+	return 0;
 }*/

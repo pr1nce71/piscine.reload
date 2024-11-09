@@ -1,23 +1,38 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elodlim <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/07 14:21:41 by elodlim           #+#    #+#             */
+/*   Updated: 2024/11/07 14:21:43 by elodlim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-    unsigned int i;
-
-    i = 0;
-    while(s1[i] == s2[i] && (s1[i] != '\0' || s2[i] != '\0'))
-    {
-        i++;
-    }
-    return(s1[i] - s2[i]);
+	while (*s1 != '\0' && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	if (*s1 == *s2)
+		return (0);
+	else
+		return ((unsigned char) *s1 - (unsigned char) *s2);
 }
 
-// #include<stdio.h>
+/*#include <stdio.h>
+#include <string.h>
 
-// int	main()
-// {
-// 	printf("%d", ft_strcmp("Hello", "Hello1"));
-// 	printf("\n%d", ft_strcmp("Hello", "He1"));
-// 	printf("\n%d", ft_strcmp("He", "Hello"));
-// 	printf("\n%d", ft_strcmp("Hello", "Hello"));
-// }
+int	main(void)
+{
+	char	*str = "Test";
+	char	*str2 = "Diff";
+	int	result = ft_strcmp(str, str2);
+
+	printf("Result of comparison: %d\n", result);
+	printf("%d\n", strcmp(str, str2));
+	return (0);
+}*/

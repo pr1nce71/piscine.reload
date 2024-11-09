@@ -1,2 +1,2 @@
 #!/bin/sh
-ifconfig | grep -e "^\tether" | cut -d " " -f2
+ifconfig | grep ether | awk '{print $2}'

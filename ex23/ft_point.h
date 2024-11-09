@@ -1,47 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elodlim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:31:35 by elodlim           #+#    #+#             */
-/*   Updated: 2024/11/05 12:31:37 by elodlim          ###   ########.fr       */
+/*   Created: 2024/11/07 15:02:24 by elodlim           #+#    #+#             */
+/*   Updated: 2024/11/07 15:02:27 by elodlim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>*/
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-void	ft_swap(int *a, int *b)
+typedef struct t_point
 {
-	int	tmp;
+	int	x;
+	int	y;
+}	t_point;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-/*void	ft_putnbr(int n)
-{
-	char	c;
-
-	if (n >= 10)
-		ft_putnbr(n);
-	c = (n % 10) + '0';
-	write(1, &c, 1);
-}
-
-int	main(void)
-{
-	int	x = 5;
-	int	y = 4;
-
-	ft_swap(&x, &y);
-	write(1, "x:", 2);
-	ft_putnbr(x);
-	write(1, " ", 1);
-	write(1, "y:", 2);
-	ft_putnbr(y);
-	write(1, "\n", 1);
-	return (0);
-}*/
+#endif

@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elodlim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 16:04:15 by elodlim           #+#    #+#             */
-/*   Updated: 2024/11/07 16:04:17 by elodlim          ###   ########.fr       */
+/*   Created: 2024/11/05 12:34:05 by elodlim           #+#    #+#             */
+/*   Updated: 2024/11/05 12:34:08 by elodlim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int	ft_iterative_factorial(int nb)
 {
-	long	i;
+	int	fact;
 
-	i = 0;
-	while (i * i <= nb)
+	fact = 1;
+	if (nb < 0)
+		return (0);
+	if (!nb)
+		return (1);
+	while (nb > 0)
 	{
-		if (i * i == nb)
-			return (i);
-		i++;
+		fact *= nb;
+		nb--;
 	}
-	return (0);
+	return (fact);
 }
 
 /*#include <stdio.h>
@@ -29,8 +32,25 @@ int	ft_sqrt(int nb)
 
 int	main(int argc, char *argv[])
 {
+	char	*str = argv[1];
+	int	i;
+	int	n;
+
+	i = 1;
 	if (argc != 2)
-		return (1);
-	printf("%i\n", ft_sqrt(atoi(argv[1])));
-	return (0);
+	{
+		printf("Usage: %s <number_to_convert>\n", argv[0]);
+		return 1;
+	}
+	while (i < argc)
+	{
+		n = atoi(argv[i]);
+		if (n > 12)
+		{
+			printf("warning: factorial of %d may cause overflow in 32-bits int.\n", n);
+		}
+		printf("The Factorial of %d is %d", n, ft_iterative_factorial(n));
+		i++;
+	}
+	return 0;
 }*/

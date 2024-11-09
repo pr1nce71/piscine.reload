@@ -1,47 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elodlim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:31:35 by elodlim           #+#    #+#             */
-/*   Updated: 2024/11/05 12:31:37 by elodlim          ###   ########.fr       */
+/*   Created: 2024/11/07 15:11:43 by elodlim           #+#    #+#             */
+/*   Updated: 2024/11/07 15:11:46 by elodlim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>*/
-
-void	ft_swap(int *a, int *b)
+int	ft_strlen(char *str)
 {
-	int	tmp;
+	int	length;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	length = 0;
+	while (*str++)
+		length++;
+	return (length);
 }
 
-/*void	ft_putnbr(int n)
-{
-	char	c;
+/*#include <stdio.h>
 
-	if (n >= 10)
-		ft_putnbr(n);
-	c = (n % 10) + '0';
-	write(1, &c, 1);
-}
+int main(){
+	char	str[] = "Test";
+	int length = ft_strlen(str);
 
-int	main(void)
-{
-	int	x = 5;
-	int	y = 4;
-
-	ft_swap(&x, &y);
-	write(1, "x:", 2);
-	ft_putnbr(x);
-	write(1, " ", 1);
-	write(1, "y:", 2);
-	ft_putnbr(y);
-	write(1, "\n", 1);
-	return (0);
+	printf("Longueur de la chaine '%s' : %d\n", str, length);
+	return 0;
 }*/

@@ -1,47 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elodlim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:31:35 by elodlim           #+#    #+#             */
-/*   Updated: 2024/11/05 12:31:37 by elodlim          ###   ########.fr       */
+/*   Created: 2024/11/07 15:42:43 by elodlim           #+#    #+#             */
+/*   Updated: 2024/11/07 15:42:46 by elodlim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>*/
-
-void	ft_swap(int *a, int *b)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	int	tmp;
+	int	i;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	i = 0;
+	while (i < length)
+		(*f)(tab[i++]);
 }
-
-/*void	ft_putnbr(int n)
-{
-	char	c;
-
-	if (n >= 10)
-		ft_putnbr(n);
-	c = (n % 10) + '0';
-	write(1, &c, 1);
-}
-
-int	main(void)
-{
-	int	x = 5;
-	int	y = 4;
-
-	ft_swap(&x, &y);
-	write(1, "x:", 2);
-	ft_putnbr(x);
-	write(1, " ", 1);
-	write(1, "y:", 2);
-	ft_putnbr(y);
-	write(1, "\n", 1);
-	return (0);
-}*/

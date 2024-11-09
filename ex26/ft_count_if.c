@@ -1,47 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elodlim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:31:35 by elodlim           #+#    #+#             */
-/*   Updated: 2024/11/05 12:31:37 by elodlim          ###   ########.fr       */
+/*   Created: 2024/11/07 16:12:35 by elodlim           #+#    #+#             */
+/*   Updated: 2024/11/07 16:19:46 by elodlim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>*/
-
-void	ft_swap(int *a, int *b)
+int	ft_count_if(char **tab, int (*f)(char*))
 {
-	int	tmp;
+	int	i;
+	int	count;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	i = 0;
+	count = 0;
+	while (tab[i])
+	{
+		if (f(tab[i]) == 1)
+			count++;
+		i++;
+	}
+	return (count);
 }
-
-/*void	ft_putnbr(int n)
-{
-	char	c;
-
-	if (n >= 10)
-		ft_putnbr(n);
-	c = (n % 10) + '0';
-	write(1, &c, 1);
-}
-
-int	main(void)
-{
-	int	x = 5;
-	int	y = 4;
-
-	ft_swap(&x, &y);
-	write(1, "x:", 2);
-	ft_putnbr(x);
-	write(1, " ", 1);
-	write(1, "y:", 2);
-	ft_putnbr(y);
-	write(1, "\n", 1);
-	return (0);
-}*/
