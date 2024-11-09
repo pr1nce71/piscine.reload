@@ -33,27 +33,27 @@ int	*ft_range(int min, int max)
 	return (tab);
 }
 
-/*#include <stdio.h>
+// #include <stdio.h>
 
-int	main()
-{
-	int min = 5;
-	int max = 10;
-	int *range;
-	int i;
+// int	main()
+// {
+// 	int min = 5;
+// 	int max = 10;
+// 	int *range;
+// 	int i;
 
-	i = 0;
-	range = ft_range(min, max);
-	if (range == NULL)
-	{
-		printf("echec allocation\n");
-		return (1);
-	}
-	while (i < (max - min))
-	{
-		printf("%d\n", range[i]);
-		i++;
-	}
-	free(range);
-	return (0);
-}*/
+// 	i = 0;
+// 	range = ft_range(min, max);
+// 	if (range == NULL)
+// 	{
+// 		printf("echec allocation\n");
+// 		return (1);
+// 	}
+// 	while (i < (max - min))
+// 	{
+// 		printf("%d\n", range[i]);
+// 		i++;
+// 	}
+// 	free(range);
+// 	return (0);
+// }

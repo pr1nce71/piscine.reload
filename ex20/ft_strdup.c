@@ -11,6 +11,24 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar (str[i]);
+		i++;
+	}
+}
 
 int	ft_strlen(char *str)
 {
@@ -49,18 +67,21 @@ char	*ft_strdup(char *src)
 	return (dest);
 }
 
-/*#include <stdio.h>
-#include <string.h>
-int	main(void)
-{
-	char *original = "Test";
-	char *duplicate = strdup(original);
-	char *dup = ft_strdup(original);
+// int main(void)
+// {
+//     char *src = "Hello, world!";
+//     char *dup = ft_strdup(src);
 
-	printf("Original: %s\n", original);
-	printf("Duplicate: %s\n", duplicate);
-	printf("Ft_strdup: %s\n", dup);
-
-	free(duplicate);
-	free(dup);
-}*/
+//     if (dup == NULL)
+//     {
+//         ft_putstr("error!\n");
+//         return (1);
+//     }
+//     ft_putstr("og: ");
+//     ft_putstr(src);
+//     ft_putchar('\n');
+//     ft_putstr("copie: ");
+//     ft_putstr(dup);
+//     ft_putchar('\n');
+//     return (0);
+// }

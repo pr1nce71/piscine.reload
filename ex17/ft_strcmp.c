@@ -23,16 +23,16 @@ int	ft_strcmp(char *s1, char *s2)
 		return ((unsigned char) *s1 - (unsigned char) *s2);
 }
 
-/*#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int	main(void)
-{
-	char	*str = "Test";
-	char	*str2 = "Diff";
-	int	result = ft_strcmp(str, str2);
+// int	main(void)
+// {
+// 	char	*str = "Test";
+// 	char	*str2 = "Diff";
+// 	int	result = ft_strcmp(str, str2);
 
-	printf("Result of comparison: %d\n", result);
-	printf("%d\n", strcmp(str, str2));
-	return (0);
-}*/
+// 	printf("Result of comparison: %d\n", result);
+// 	printf("%d\n", strcmp(str, str2));
+// 	return (0);
+// }

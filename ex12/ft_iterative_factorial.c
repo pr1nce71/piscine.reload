@@ -26,31 +26,3 @@ int	ft_iterative_factorial(int nb)
 	}
 	return (fact);
 }
-
-/*#include <stdio.h>
-#include <stdlib.h>
-
-int	main(int argc, char *argv[])
-{
-	char	*str = argv[1];
-	int	i;
-	int	n;
-
-	i = 1;
-	if (argc != 2)
-	{
-		printf("Usage: %s <number_to_convert>\n", argv[0]);
-		return 1;
-	}
-	while (i < argc)
-	{
-		n = atoi(argv[i]);
-		if (n > 12)
-		{
-			printf("warning: factorial of %d may cause overflow in 32-bits int.\n", n);
-		}
-		printf("The Factorial of %d is %d", n, ft_iterative_factorial(n));
-		i++;
-	}
-	return 0;
-}*/

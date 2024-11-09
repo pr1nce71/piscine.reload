@@ -10,22 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int ft_strlen(char *str)
 {
-	int	length;
+	int i;
 
-	length = 0;
-	while (*str++)
-		length++;
-	return (length);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
-/*#include <stdio.h>
+// #include <stdio.h>
 
-int main(){
-	char	str[] = "Test";
-	int length = ft_strlen(str);
+// int main(){
+// 	char	str[] = "Test";
+// 	int length = ft_strlen(str);
 
-	printf("Longueur de la chaine '%s' : %d\n", str, length);
-	return 0;
-}*/
+// 	printf("Longueur de la chaine '%s' : %d\n", str, length);
+// 	return 0;
+// }
